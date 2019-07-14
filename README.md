@@ -56,7 +56,7 @@ action :: MonadFree Pattern m => Int -> m ()
 action i = liftF $ Action i ()
 
 
-success :: (Maybe String, [Pattern ()]
+success :: (Maybe String, [Pattern ()])
 success = prospect $ do
   a <- cont
   action 1
@@ -64,7 +64,7 @@ success = prospect $ do
 -- success = (Just "success", [Cont (const ()), Action 1 ()])
 
 
-failure :: (Maybe String, [Pattern ()]
+failure :: (Maybe String, [Pattern ()])
 failure = prospect $ do
   a <- cont
   action 1
